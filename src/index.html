@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Technoblade Crown Adder</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="header">🐷 Technoblade Crown Adder 👑</h1>
+        <p class="description">Adds Technoblade's crown to your skin. Created by cxntered in 2 and a half hours.
+        <p class="warning">I am not liable for how it looks. This app simply takes Technoblade's crown from his skin and
+            pastes it on top of your skin.</p>
+        </p>
+
+        <div class="form">
+            <div class="input-container ic1">
+                <input id="ign" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="ign" class="placeholder">IGN or UUID</label>
+            </div>
+            <button type="text" class="submit" onclick="addCrown()">Add Crown 👑</button>
+        </div>
+
+        <br /> <br />
+
+        <div class="download" id="download">
+            <canvas id="canvas" style="position: absolute; left: 50%; transform: translate(-50%, 0%);"></canvas>
+            <br /> <br /> <br /> <br />
+            <a class="downloadButton" id='downloadLink' download='image.png'>Download</a>
+        </div>
+
+        <div class="footer">
+            <p class="description" style="font-style: italic;">
+                In honour of Technoblade/Alex. Fly high, and may you rest in piece. 🕊️
+            </p>
+        </div>
+    </div>
+
+    <script defer src="./assets/js/script.js"></script>
+</body>
+
+</html>
