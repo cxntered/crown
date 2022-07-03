@@ -24,7 +24,7 @@ const addCrown = async () => {
                 document.getElementById("download").style.visibility = "visible";
             };
             crown.src = "./assets/images/crown.png";
-        }, 500);
+        }, 1500);
 
         let skin = new Image();
         skin.crossOrigin = "anonymous";
