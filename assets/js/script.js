@@ -23,7 +23,7 @@ const addCrown = async () => {
                 document.getElementById("downloadLink").href = downloadURL;
                 document.getElementById("download").style.visibility = "visible";
             };
-            crown.src = "../assets/images/crown.png";
+            crown.src = "./assets/images/crown.png";
         }, 500);
 
         let skin = new Image();
