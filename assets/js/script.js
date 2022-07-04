@@ -77,13 +77,13 @@ const addCrown = async () => {
 
                     function OwO(x) {
                         if (x.matches) { // If media query matches
-                            document.main.style.height = "150vh";
+                            document.main.style.height = "130vh";
                         } else {
                             document.main.style.height = "90vh";
                         }
                     }
 
-                    var uwu = window.matchMedia("(max-width: 480px)")
+                    var uwu = window.matchMedia("(max-height: 1440px)")
                     OwO(x) // Call listener function at run time
                     uwu.addListener(OwO)
                 };
