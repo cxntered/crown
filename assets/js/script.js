@@ -36,7 +36,6 @@ const addCrown = async () => {
                     const OwO = (uwu) => {
                         if (uwu.matches) {
                             document.getElementsByClassName("main")[0].style.height = "110vh";
-                            alert('yes')
                         } else {
                             document.getElementsByClassName("main")[0].style.height = "90vh";
                         }
@@ -91,7 +90,6 @@ const addCrown = async () => {
                     const OwO = (uwu) => {
                         if (uwu.matches) {
                             document.getElementsByClassName("main")[0].style.height = "110vh";
-                            alert('yes')
                         } else {
                             document.getElementsByClassName("main")[0].style.height = "90vh";
                         }
