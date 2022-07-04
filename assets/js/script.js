@@ -8,8 +8,6 @@ const addCrown = async () => {
         }
 
         canvas = document.getElementById("canvas");
-        canvas.width = 64;
-        canvas.height = 64;
         ctx = canvas.getContext("2d");
 
         setTimeout(() => {
@@ -29,6 +27,14 @@ const addCrown = async () => {
         let skin = new Image();
         skin.crossOrigin = "anonymous";
         skin.onload = function() {
+            if (skin.height === 32) {
+                canvas.width = 64;
+                canvas.height = 32;
+            } else {
+                canvas.width = 64;
+                canvas.height = 64;
+            }
+
             ctx.imageSmoothingEnabled = false;
             ctx.drawImage(skin, 0, 0);
         };
