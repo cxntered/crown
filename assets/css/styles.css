@@ -5,6 +5,11 @@ body {
     background-color: #141414;
 }
 
+.text {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .main {
     font-family: 'Inter', sans-serif;
     background-color: #0c0c0c;
@@ -84,17 +89,13 @@ body {
     background-color: #0c0c0c;
     border-radius: 10px;
     height: 20px;
-    left: 20px;
+    left: 10px;
     position: absolute;
     top: -20px;
     transform: translateY(0);
     transition: transform 200ms;
     width: 88px;
     font-family: 'Inter', sans-serif;
-}
-
-.cut-short {
-    width: 50px;
 }
 
 .input:focus~.cut,
@@ -111,12 +112,12 @@ body {
     position: absolute;
     transform-origin: 0 50%;
     transition: transform 200ms, color 200ms;
-    top: 20px;
+    top: 18px;
 }
 
 .input:focus~.placeholder,
 .input:not(:placeholder-shown)~.placeholder {
-    transform: translateY(-30px) translateX(10px) scale(0.75);
+    transform: translateY(-32px) translateX(0px) scale(0.75);
 }
 
 .input:not(:placeholder-shown)~.placeholder {
@@ -127,7 +128,23 @@ body {
     color: #808097;
 }
 
-.submit {
+.upload-btn-wrapper {
+    position: relative;
+    overflow: visible;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 18px;
+    margin-top: 15px;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.upload {
     background-color: #5865F2;
     border-radius: 12px;
     border: 0;
@@ -141,10 +158,29 @@ body {
     text-align: center;
     width: 100%;
     font-family: 'Inter', sans-serif;
+    box-shadow: 0 5px 0 #454FBF;
+}
+
+.submit {
+    background-color: #5865F2;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 11vh;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 5px 0 #454FBF;
 }
 
 .submit:active {
-    background-color: #454FBF;
+    box-shadow: none;
+    transform: translateY(5px);
 }
 
 .download {
@@ -170,10 +206,13 @@ body {
     vertical-align: middle;
     line-height: 50px;
     text-decoration: none;
+    box-shadow: 0 5px 0 #454FBF;
+    margin-top: 150px;
 }
 
 .downloadButton:active {
-    background-color: #454FBF;
+    box-shadow: none;
+    transform: translate(-50%, 5px);
 }
 
 .footer {
@@ -182,11 +221,21 @@ body {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 100%;
+    width: 75%;
+}
+
+@media (max-width: 768px) {
+
+    .form,
+    .downloadButton {
+        width: 80vw;
+    }
 }
 
 @media (max-width: 480px) {
-    .form {
+
+    .form,
+    .downloadButton {
         width: 80vw;
     }
 
@@ -196,5 +245,9 @@ body {
 
     .warning {
         font-size: smaller;
+    }
+
+    .cut {
+        width: 76px;
     }
 }

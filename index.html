@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <meta property="og:url" content="https://cxntered,xyz/crown" />
     <meta property="og:site_name" content="Technoblade Crown Adder" />
@@ -19,36 +20,48 @@
 
 <body>
     <div class="main">
-        <h1 class="header">🐷 Technoblade Crown Adder 👑</h1>
-        <p class="description">Adds Technoblade's crown to your skin. Created by cxntered in two and a half hours.</p>
-        <p class="warning">I am not liable for how it looks. This app simply takes Technoblade's crown from his skin and
-            pastes it on top of your skin.</p>
-        <p class="warning">WARNING: Some pre-1.8 skins, such as Notch's, do not work properly as the transparency has
-            been replaced with black.</p>
+        <div class="text">
+            <h1 class="header">🐷 Technoblade Crown Adder 👑</h1>
+            <p class="description">Adds Technoblade's crown to your skin. Created by cxntered in around 4 hours.</p>
+            <p class="warning">I am not liable for how it looks. This app simply takes Technoblade's crown from his skin
+                and
+                pastes it on top of your skin.</p>
+            <p class="warning">WARNING: Some pre-1.8 skins, such as Notch's, do not work properly as the transparency
+                has
+                been replaced with black.</p>
+        </div>
 
         <div class="form">
             <div class="input-container ic1">
                 <input id="ign" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="ign" class="placeholder">IGN or UUID</label>
+                <div class="upload-btn-wrapper">
+                    <button class="upload"><i class="fa fa-upload"></i> Upload Skin (.png) [ <span id="file-chosen"
+                            style="font-weight: bold;">No file chosen</span> ]</button>
+                    <input type="file" id="skin-file" accept="image/png" />
+                </div>
             </div>
+
             <button type="text" class="submit" onclick="addCrown()">Add Crown 👑</button>
         </div>
 
         <br /> <br />
 
         <div class="download" id="download">
-            <canvas id="canvas" style="position: absolute; left: 50%; transform: translate(-50%, 0%);"></canvas>
-            <br /> <br /> <br /> <br />
-            <a class="downloadButton" id='downloadLink' download='image.png'>Download</a>
+            <canvas id="displayCanvas"
+                style="position: absolute; left: 50%; transform: translate(-50%, 0%); pointer-events: none;"></canvas>
+            <a class="downloadButton" id='downloadLink' download='image.png'><i class="fa fa-download"></i> Download</a>
         </div>
 
         <div class="footer">
             <p class="description" style="font-style: italic;">
-                In honour of Technoblade/Alex. Fly high, and may you rest in peace. 🕊️
+                Made in honor of Technoblade/Alex. Fly high, and may you rest in peace. 🕊️
             </p>
         </div>
     </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
 
     <script defer src="./assets/js/script.js"></script>
 </body>
