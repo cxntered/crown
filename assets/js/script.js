@@ -83,7 +83,7 @@ const addCrown = async () => {
                         }
                     }
 
-                    var uwu = window.matchMedia("(max-height: 1440px) and (max-width: 720px)");
+                    var uwu = window.matchMedia("(max-height: 720px) and (max-width: 480px)");
                     OwO(x) // Call listener function at run time
                     uwu.addListener(OwO)
                 };
