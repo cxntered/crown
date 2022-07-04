@@ -23,7 +23,7 @@ const addCrown = async () => {
             const drawCrown = () => {
                 let crown = new Image();
                 crown.crossOrigin = "anonymous";
-                crown.onload = function() {
+                crown.onload = () => {
                     ctx.imageSmoothingEnabled = false;
                     dCtx.imageSmoothingEnabled = false;
                     ctx.drawImage(crown, 0, 0);
@@ -32,13 +32,26 @@ const addCrown = async () => {
                     const downloadURL = canvas.toDataURL();
                     document.getElementById("downloadLink").href = downloadURL;
                     document.getElementById("download").style.visibility = "visible";
+
+                    const OwO = (uwu) => {
+                        if (uwu.matches) {
+                            document.getElementsByClassName("main")[0].style.height = "110vh";
+                            alert('yes')
+                        } else {
+                            document.getElementsByClassName("main")[0].style.height = "90vh";
+                        }
+                    }
+
+                    var uwu = window.matchMedia("(max-height: 720px) and (max-width: 480px)");
+                    OwO(uwu)
+                    uwu.addListener(OwO)
                 };
                 crown.src = "./assets/images/crown.png";
             };
 
             let skin = new Image();
             skin.crossOrigin = "anonymous";
-            skin.onload = function() {
+            skin.onload = () => {
                 if (skin.height === 32) {
                     canvas.width = 64;
                     canvas.height = 32;
@@ -65,7 +78,7 @@ const addCrown = async () => {
             const drawCrown = () => {
                 let crown = new Image();
                 crown.crossOrigin = "anonymous";
-                crown.onload = function() {
+                crown.onload = () => {
                     ctx.imageSmoothingEnabled = false;
                     dCtx.imageSmoothingEnabled = false;
                     ctx.drawImage(crown, 0, 0);
@@ -75,16 +88,17 @@ const addCrown = async () => {
                     document.getElementById("downloadLink").href = downloadURL;
                     document.getElementById("download").style.visibility = "visible";
 
-                    function OwO(x) {
-                        if (x.matches) { // If media query matches
-                            document.main.style.height = "130vh";
+                    const OwO = (uwu) => {
+                        if (uwu.matches) {
+                            document.getElementsByClassName("main")[0].style.height = "110vh";
+                            alert('yes')
                         } else {
-                            document.main.style.height = "90vh";
+                            document.getElementsByClassName("main")[0].style.height = "90vh";
                         }
                     }
 
                     var uwu = window.matchMedia("(max-height: 720px) and (max-width: 480px)");
-                    OwO(x) // Call listener function at run time
+                    OwO(uwu)
                     uwu.addListener(OwO)
                 };
                 crown.src = "./assets/images/crown.png";
@@ -92,7 +106,7 @@ const addCrown = async () => {
 
             let skin = new Image();
             skin.crossOrigin = "anonymous";
-            skin.onload = function() {
+            skin.onload = () => {
                 if (skin.height === 32) {
                     canvas.width = 64;
                     canvas.height = 32;
@@ -121,6 +135,6 @@ const skinFile = document.getElementById("skin-file");
 
 const fileChosen = document.getElementById("file-chosen");
 
-skinFile.addEventListener("change", function() {
+skinFile.addEventListener("change", () => {
     fileChosen.textContent = this.files[0].name
 })
