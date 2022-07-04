@@ -235,8 +235,11 @@ body {
 @media (max-width: 480px) {
 
     .form,
+    .upload,
+    .submit,
     .downloadButton {
         width: 80vw;
+        font-size: small;
     }
 
     .main {

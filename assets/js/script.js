@@ -10,8 +10,6 @@ const addCrown = async () => {
         }
 
         if (ign && !skinFile || ign && skinFile) {
-            if (ign && !skinFile) console.log('ign but no skin file')
-            if (ign && skinfile) console.log('ign and skin file')
             const uuid = await fetch(`https://playerdb.co/api/player/minecraft/${ign}`).then(res => res.json());
             if (!uuid.success) {
                 return alert("ERROR: An error has occured. Make sure that you inputted the right IGN/UUID.")
@@ -59,8 +57,6 @@ const addCrown = async () => {
             };
             skin.src = `https://crafatar.com/skins/${uuid.data.player.id}`;
         } else if (!ign && skinFile) {
-            console.log(skinFile)
-            console.log('no ign but skin file')
             canvas = document.getElementById("canvas");
             ctx = canvas.getContext("2d");
             displayCanvas = document.getElementById("displayCanvas");
@@ -78,6 +74,18 @@ const addCrown = async () => {
                     const downloadURL = canvas.toDataURL();
                     document.getElementById("downloadLink").href = downloadURL;
                     document.getElementById("download").style.visibility = "visible";
+
+                    function OwO(x) {
+                        if (x.matches) { // If media query matches
+                            document.main.style.height = "150vh";
+                        } else {
+                            document.main.style.height = "90vh";
+                        }
+                    }
+
+                    var uwu = window.matchMedia("(max-width: 480px)")
+                    OwO(x) // Call listener function at run time
+                    uwu.addListener(OwO)
                 };
                 crown.src = "./assets/images/crown.png";
             };
