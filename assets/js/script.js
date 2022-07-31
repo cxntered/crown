@@ -1,3 +1,23 @@
+const warningAlert = (msg) => {
+    document.getElementsByClassName("alert")[0].style.backgroundColor = "#ffaa2c";
+    document.getElementsByClassName("alert")[0].style.visibility = "visible";
+    document.getElementsByClassName("alert")[0].style.opacity = "1";
+    document.getElementsByClassName("alert")[0].innerHTML = `<span class="closebtn" onclick="this.parentElement.style.opacity = '0'; setTimeout(function(){ this.parentElement.style.visibility = 'hidden'; }, 150)"> &times;</span>${msg}`;
+};
+
+const errorAlert = (msg) => {
+    document.getElementsByClassName("alert")[0].style.backgroundColor = "#f44336";
+    document.getElementsByClassName("alert")[0].style.visibility = "visible";
+    document.getElementsByClassName("alert")[0].style.opacity = "1";
+    document.getElementsByClassName("alert")[0].innerHTML = `<span class="closebtn" onclick="this.parentElement.style.opacity = '0'; setTimeout(function(){ this.parentElement.style.visibility = 'hidden'; }, 150)"> &times;</span>${msg}`;
+};
+
+window.onload = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        warningAlert("WARNING: We have detected that you may be on a mobile device or simply have a small screen. You can still use the website, but please know that this website is not fully optimized for mobile devices, meaning there might be more bugs than on a computer or simply bad UI/UX. Please use a desktop or laptop computer to get the full experience.");
+    };
+};
+
 const addCrown = async () => {
     try {
         document.getElementById("download").style.visibility = "hidden";
@@ -6,13 +26,13 @@ const addCrown = async () => {
         const skinFile = document.getElementById("skin-file").files[0];
 
         if (!ign && !skinFile) {
-            return alert("ERROR: You have not inputted an IGN/UUID or a skin file!")
+            return errorAlert("ERROR: You have not inputted an IGN/UUID or a skin file!")
         }
 
         if (ign && !skinFile || ign && skinFile) {
             const uuid = await fetch(`https://playerdb.co/api/player/minecraft/${ign}`).then(res => res.json());
             if (!uuid.success) {
-                return alert("ERROR: An error has occured. Make sure that you inputted the right IGN/UUID.")
+                return errorAlert("ERROR: An error has occured. Make sure that you inputted the right IGN/UUID.")
             }
 
             canvas = document.getElementById("canvas");
@@ -125,14 +145,14 @@ const addCrown = async () => {
         }
     } catch (err) {
         console.log(err);
-        alert("ERROR: An error has occured. Check the console for more information. If this persists, contact cxntered @ cxntered#8012 on Discord.")
-    }
-}
+        errorAlert("ERROR: An error has occured. Check the console for more information. If this persists, contact cxntered @ cxntered#8012 on Discord & take a screenshot of the console. (screenshot.help to take a screenshot)")
+    };
+};
 
 const skinFile = document.getElementById("skin-file");
 
 const fileChosen = document.getElementById("file-chosen");
 
 skinFile.addEventListener("change", () => {
-    fileChosen.textContent = this.files[0].name
-})
+    fileChosen.textContent = skinFile.files[0].name;
+});

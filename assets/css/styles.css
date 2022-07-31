@@ -35,23 +35,19 @@ body {
     text-align: center;
 }
 
-.error {
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    color: white;
-    text-align: center;
-}
-
-.error-label {
-    color: red;
-}
-
 .warning {
     font-style: italic;
     color: white;
     text-align: center;
     font-size: small;
+}
+
+.repoLink:link {
+    color: #5865F2;
+}
+
+.repoLink:visited {
+    color: #5865F2;
 }
 
 .form {
@@ -142,6 +138,7 @@ body {
     left: 0;
     top: 0;
     opacity: 0;
+    cursor: pointer;
 }
 
 .upload {
@@ -159,6 +156,9 @@ body {
     width: 100%;
     font-family: 'Inter', sans-serif;
     box-shadow: 0 5px 0 #454FBF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .submit {
@@ -184,7 +184,7 @@ body {
 }
 
 .download {
-    visibility: hidden;
+    display: none;
 }
 
 .downloadButton {
@@ -213,6 +213,34 @@ body {
 .downloadButton:active {
     box-shadow: none;
     transform: translate(-50%, 5px);
+}
+
+.alert {
+    /* hehe 69 and 420 funny numbers */
+    z-index: 69420;
+    position: relative;
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.15s;
+    visibility: hidden;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.closebtn:hover {
+    color: lightgray;
 }
 
 .footer {

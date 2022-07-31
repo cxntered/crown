@@ -28,16 +28,25 @@
 </head>
 
 <body>
+    <div class="alert"></div>
     <div class="main">
         <div class="text">
             <h1 class="header">🐷 Technoblade Crown Adder 👑</h1>
             <p class="description">Adds Technoblade's crown to your skin. Created by cxntered in around 4 hours.</p>
-            <p class="warning">I am not liable for how it looks. This app simply takes Technoblade's crown from his skin
-                and
-                pastes it on top of your skin.</p>
-            <p class="warning">WARNING: Some pre-1.8 skins, such as Notch's, do not work properly as the transparency
-                has
-                been replaced with black.</p>
+            <p class="warning">
+                There are MANY bugs, if you find any, please report them on the
+                <a class="repoLink" href="https://github.com/cxntered/crown/issues">
+                    GitHub Repo's issue tracker
+                </a>.
+            </p>
+            <p class="warning">
+                I am not liable for how it looks. This app simply takes Technoblade's crown from his skin and pastes it
+                on top of your skin.
+            </p>
+            <p class="warning">
+                WARNING: Some pre-1.8 skins, such as Notch's, do not work properly as the transparency has been replaced
+                with black.
+            </p>
         </div>
 
         <div class="form">
@@ -72,7 +81,7 @@
     <canvas id="canvas" style="display: none;"></canvas>
 
     <script defer>document.querySelector('body *').addEventListener('touchstart', function() { });</script>
-    <script defer src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js" defer></script>
 </body>
 
 </html>
