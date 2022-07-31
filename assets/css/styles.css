@@ -10,6 +10,34 @@ body {
     margin-right: 10px;
 }
 
+.alert {
+    /* hehe 69 and 420 funny numbers */
+    z-index: 69420;
+    position: relative;
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.15s;
+    visibility: hidden;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.closebtn:hover {
+    color: lightgray;
+}
+
 .main {
     font-family: 'Inter', sans-serif;
     background-color: #0c0c0c;
@@ -40,6 +68,14 @@ body {
     color: white;
     text-align: center;
     font-size: small;
+}
+
+.alertLink:link {
+    color: white;
+}
+
+.alertLink:visited {
+    color: white;
 }
 
 .repoLink:link {
@@ -184,7 +220,7 @@ body {
 }
 
 .download {
-    display: none;
+    visibility: hidden;
 }
 
 .downloadButton {
@@ -215,34 +251,6 @@ body {
     transform: translate(-50%, 5px);
 }
 
-.alert {
-    /* hehe 69 and 420 funny numbers */
-    z-index: 69420;
-    position: relative;
-    padding: 20px;
-    color: white;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    opacity: 1;
-    transition: opacity 0.15s;
-    visibility: hidden;
-}
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.15s;
-}
-
-.closebtn:hover {
-    color: lightgray;
-}
-
 .footer {
     text-align: center;
     position: absolute;
@@ -270,7 +278,8 @@ body {
         font-size: small;
     }
 
-    .main {
+    .main,
+    .alert {
         font-size: small;
     }
 
