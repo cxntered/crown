@@ -12,10 +12,8 @@ const errorAlert = (msg) => {
     document.getElementsByClassName("alert")[0].innerHTML = `<span class="closebtn" onclick="this.parentElement.style.opacity = '0'; setTimeout(function(){ this.parentElement.style.visibility = 'hidden'; }, 150)"> &times;</span>${msg}`;
 };
 
-window.onload = () => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        warningAlert("WARNING: We have detected that you may be on a mobile device or simply have a small screen. You can still use the website, but please know that this website is not fully optimized for mobile devices, meaning there might be more bugs than on a computer or simply bad UI/UX. Please use a desktop or laptop computer to get the full experience.");
-    };
+if (window.matchMedia("(max-width: 480px)").matches) {
+    warningAlert("WARNING: We have detected that you may be on a mobile device or simply have a small screen. You can still use the website, but please know that this website is not fully optimized for mobile devices, meaning there might be more bugs than on a computer or simply bad UI/UX. Please use a desktop or laptop computer to get the full experience.");
 };
 
 const addCrown = async () => {
