@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <meta property="og:url" content="https://cxntered,xyz/crown" />
     <meta property="og:site_name" content="Technoblade Crown Adder" />
@@ -15,7 +13,7 @@
     <meta property="og:description" content="A simple website for adding Technoblade's crown to any person's skin." />
     <meta property="og:image" content="https://crafatar.com/avatars/b876ec32-e396-476b-a115-8438d83c67d4?overlay" />
     <meta name="theme-color" content="#efa9a7" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-40L71QZSE5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -23,60 +21,59 @@
         gtag('js', new Date());
 
         gtag('config', 'G-40L71QZSE5');
-    </script>
+    </script> -->
     <title>🐷 Technoblade Crown Adder 👑</title>
 </head>
 
 <body>
-    <div class="alert"></div>
-    <div class="main">
-        <div class="text">
-            <h1 class="header">🐷 Technoblade Crown Adder 👑</h1>
-            <p class="description">Adds Technoblade's crown to your skin. Created by cxntered in around 4 hours.</p>
-            <p class="warning">
-                There are MANY bugs, if you find any, please report them on the
-                <a class="repoLink" href="https://github.com/cxntered/crown/issues">
-                    GitHub Repo's issue tracker
-                </a>.
-            </p>
-            <p class="warning">
-                I am not liable for how it looks. This app simply takes Technoblade's crown from his skin and pastes it
-                on top of your skin.
-            </p>
-            <p class="warning">
-                WARNING: Some pre-1.8 skins, such as Notch's, do not work properly as the transparency has been replaced
-                with black.
-            </p>
-        </div>
+    <main class="container">
+        <hgroup style="text-align: center;">
+            <h1>🐷 Technoblade Crown Adder 👑</h1>
+            <h2>A simple website for adding Technoblade's crown to any person's skin.</h2>
+        </hgroup>
 
-        <div class="form">
-            <div class="input-container ic1">
-                <input id="ign" class="input" type="text" placeholder=" " />
-                <div class="cut"></div>
-                <label for="ign" class="placeholder">IGN or UUID</label>
-                <div class="upload-btn-wrapper">
-                    <button class="upload"><i class="fa fa-upload"></i> Upload Skin (.png) [ <span id="file-chosen"
-                            style="font-weight: bold;">No file chosen</span> ]</button>
-                    <input type="file" id="skin-file" accept="image/png" />
-                </div>
+        <form autocomplete="off">
+            <label for="player">IGN or UUID</label>
+            <input id="player" name="player" placeholder="IGN or UUID" required>
+
+            <button id="addCrown">Add Crown 👑</button>
+        </form>
+
+        <div class="download" id="download" style="display: none">
+            <div style="text-align: center;">
+                <canvas id="displayCanvas" style="pointer-events: none; margin-bottom: 20px;">
+                    No canvas support :/
+                </canvas>
             </div>
-            <button type="text" class="submit" onclick="addCrown()">Add Crown 👑</button>
-        </div>
 
-        <br /> <br />
-
-        <div class="download" id="download">
-            <canvas id="displayCanvas"
-                style="position: absolute; left: 50%; transform: translate(-50%, 0%); pointer-events: none;"></canvas>
-            <a class="downloadButton" id='downloadLink' download='image.png'><i class="fa fa-download"></i> Download</a>
+            <button id="downloadButton" onclick="download()">Download</button>
+            <a id="downloadLink" download='crown.png'></a>
         </div>
+    </main>
 
-        <div class="footer">
-            <p class="description" style="font-style: italic;">
-                Made in honor of Technoblade/Alex. Fly high, and may you rest in peace. 🕊️
-            </p>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="container"
+        style="text-align: center; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0%);">
+        <hr>
+        <small>
+            © 2023 • cxntered • <a href="https://github.com/cxntered/crown/issues">Report bugs here</a> <br>
+            Made in honor of Technoblade. Fly high, and may you rest in peace. 🕊️
+        </small>
+    </footer><!-- ./ Footer -->
+
+    <dialog id="errorModal">
+        <article>
+            <a href="#close" aria-label="Close" class="close" data-target="errorModal" onClick="toggleModal(event)">
+            </a>
+            <h3>Error</h3>
+            <p>An error has occured. Make sure that you have inputted the correct IGN/UUID.</p>
+            <footer>
+                <a href="#close" role="button" data-target="errorModal" onClick="toggleModal(event)">
+                    OK
+                </a>
+            </footer>
+        </article>
+    </dialog>
 
     <canvas id="canvas" style="display: none;"></canvas>
 
