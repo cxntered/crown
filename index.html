@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <meta property="og:url" content="https://cxntered,xyz/crown" />
@@ -13,7 +14,7 @@
     <meta property="og:description" content="A simple website for adding Technoblade's crown to any person's skin." />
     <meta property="og:image" content="https://crafatar.com/avatars/b876ec32-e396-476b-a115-8438d83c67d4?overlay" />
     <meta name="theme-color" content="#efa9a7" />
-    <!-- Global site tag (gtag.js) - Google Analytics
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-40L71QZSE5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -21,7 +22,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-40L71QZSE5');
-    </script> -->
+    </script>
     <title>🐷 Technoblade Crown Adder 👑</title>
 </head>
 
@@ -39,21 +40,20 @@
             <button id="addCrown">Add Crown 👑</button>
         </form>
 
-        <div class="download" id="download" style="display: none">
+        <div class="download" id="download" style="visibility: hidden;">
             <div style="text-align: center;">
-                <canvas id="displayCanvas" style="pointer-events: none; margin-bottom: 20px;">
+                <canvas id="displayCanvas" style="pointer-events: none; margin-bottom: 20px;" width="128" height="128">
                     No canvas support :/
                 </canvas>
             </div>
 
-            <button id="downloadButton" onclick="download()">Download</button>
+            <button id="downloadButton" onclick="download()"><i class="fa fa-download"></i> Download</button>
             <a id="downloadLink" download='crown.png'></a>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="container"
-        style="text-align: center; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0%);">
+    <footer class="container" style="text-align: center; ">
         <hr>
         <small>
             © 2023 • cxntered • <a href="https://github.com/cxntered/crown/issues">Report bugs here</a> <br>

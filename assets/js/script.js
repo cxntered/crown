@@ -28,7 +28,7 @@ const addCrown = async () => {
 
                 const downloadURL = canvas.toDataURL();
                 document.getElementById("downloadLink").href = downloadURL;
-                document.getElementById("download").style.display = "initial";
+                document.getElementById("download").style.visibility = "visible";
             };
             crown.src = "./assets/images/crown.png";
             document.getElementById("addCrown").ariaBusy = "false";
