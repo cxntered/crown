@@ -32,6 +32,12 @@ const addCrown = async () => {
             };
             crown.src = "./assets/images/crown.png";
             document.getElementById("addCrown").ariaBusy = "false";
+
+            if (skin.height === 32) {
+                document.getElementById('download').style.marginBottom = "84px";
+            } else {
+                document.getElementById('download').style.marginBottom = "20px";
+            }
         };
 
         let skin = new Image();
