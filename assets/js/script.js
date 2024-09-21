@@ -32,34 +32,21 @@ const addCrown = async () => {
             };
             crown.src = "./assets/images/crown.png";
             document.getElementById("addCrown").ariaBusy = "false";
-
-            if (skin.height === 32) {
-                document.getElementById('download').style.marginBottom = "84px";
-            } else {
-                document.getElementById('download').style.marginBottom = "20px";
-            }
+            document.getElementById('download').style.marginBottom = "20px";
         };
 
         let skin = new Image();
         skin.crossOrigin = "anonymous";
         skin.onload = () => {
-            if (skin.height === 32) {
-                canvas.width = 64;
-                canvas.height = 32;
-                displayCanvas.width = 128;
-                displayCanvas.height = 64;
-            } else {
-                canvas.width = 64;
-                canvas.height = 64;
-                displayCanvas.width = 128;
-                displayCanvas.height = 128;
-            }
-
+            canvas.width = 64;
+            canvas.height = 64;
+            displayCanvas.width = 128;
+            displayCanvas.height = 128;
             ctx.imageSmoothingEnabled = false;
             ctx.drawImage(skin, 0, 0);
             drawCrown();
         };
-        skin.src = `https://crafatar.com/skins/${uuid.data.player.id}`;
+        skin.src = `https://vzge.me/processedskin/${uuid.data.player.id}`;
     } catch (err) {
         console.log(err);
     };
