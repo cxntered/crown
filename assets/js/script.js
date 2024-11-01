@@ -32,7 +32,6 @@ const addCrown = async () => {
             };
             crown.src = "./assets/images/crown.png";
             document.getElementById("addCrown").ariaBusy = "false";
-            document.getElementById('download').style.marginBottom = "20px";
         };
 
         let skin = new Image();

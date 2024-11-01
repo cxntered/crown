@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pink.min.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <meta property="og:url" content="https://crown.cxntered.dev" />
     <meta property="og:site_name" content="Technoblade Crown Adder" />
@@ -15,20 +15,50 @@
     <meta property="og:image" content="https://crafatar.com/avatars/b876ec32-e396-476b-a115-8438d83c67d4?overlay" />
     <meta name="theme-color" content="#efa9a7" />
     <title>🐷 Technoblade Crown Adder 👑</title>
+
+    <style>
+        @media (min-width: 576px) {
+            .container {
+                max-width: 510px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 920px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1130px;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <main class="container">
-        <hgroup style="text-align: center;">
-            <h1>🐷 Technoblade Crown Adder 👑</h1>
+<body style="display: flex; flex-direction: column; min-height: 100dvh; margin: 0;">
+    <header>
+        <hgroup style="margin-top: 60px; text-align: center;">
+            <h1 style="margin-bottom: 10px">🐷 Technoblade Crown Adder 👑</h1>
             <h2>A simple website for adding Technoblade's crown to any person's skin.</h2>
         </hgroup>
+    </header>
 
+    <main class="container" style="flex: 1;">
         <form autocomplete="off">
             <label for="player">IGN or UUID</label>
             <input id="player" name="player" placeholder="IGN or UUID" required>
 
-            <button id="addCrown">Add Crown 👑</button>
+            <button id="addCrown" style="margin-bottom: 20px; width: 100%">Add Crown 👑</button>
         </form>
 
         <div class="download" id="download" style="visibility: hidden;">
@@ -39,7 +69,9 @@
                 </canvas>
             </div>
 
-            <button id="downloadButton" onclick="download()"><i class="fa fa-download"></i> Download</button>
+            <button id="downloadButton" onclick="download()" style="width: 100%">
+                <i class="fa fa-download"></i> Download
+            </button>
             <a id="downloadLink" download='crown.png'></a>
         </div>
     </main>
