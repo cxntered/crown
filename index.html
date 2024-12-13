@@ -47,7 +47,7 @@
 
 <body style="display: flex; flex-direction: column; min-height: 100dvh; margin: 0;">
     <header>
-        <hgroup style="margin-top: 60px; text-align: center;">
+        <hgroup style="margin: 60px 16px 0px; text-align: center;">
             <h1 style="margin-bottom: 10px">🐷 Technoblade Crown Adder 👑</h1>
             <h2>A simple website for adding Technoblade's crown to any person's skin.</h2>
         </hgroup>
@@ -62,14 +62,9 @@
         </form>
 
         <div class="download" id="download" style="visibility: hidden;">
-            <div style="text-align: center;">
-                <canvas id="displayCanvas"
-                    style="user-select: none; -webkit-user-select: none; -ms-user-select: none; pointer-events: none; margin-bottom: 20px;"
-                    width="128" height="128">
-                </canvas>
-            </div>
+            <div id="skinRender" style="text-align: center;"></div>
 
-            <button id="downloadButton" onclick="download()" style="width: 100%">
+            <button id="downloadButton" onclick="download()" style="width: 100%; margin-top: 20px">
                 <i class="fa fa-download"></i> Download
             </button>
             <a id="downloadLink" download='crown.png'></a>
@@ -79,7 +74,7 @@
     <footer class="container" style="text-align: center; ">
         <hr>
         <small>
-            © 2024 • <a href="https://cxntered.dev">cxntered</a> • <a
+            © 2024 <a href="https://cxntered.dev">cxntered</a> • <a
                 href="https://github.com/cxntered/crown/issues">Report bugs here</a> <br>
             Made in honor of Technoblade. Fly high, and may you rest in peace. 🕊️ <br>
         </small>
